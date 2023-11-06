@@ -1,0 +1,217 @@
+ES6 feature:
+
+//approach 1
+function add(a,b){
+  let c = a+b;
+  console.log('res= ', c);
+}
+
+add(1,2);
+
+
+//approach 2
+let add1 = function(a,b){
+  let c = a+b;
+  console.log("res=",c);
+}
+add1(10,20);
+
+
+//approach 3 (arrow function) ES6
+let add2 = (a,b) => {
+  let c = a+b;
+  console.log("res=",c);
+}
+add2(20,30);
+
+
+let add3 = (a,b) => {
+ return a+b;
+}
+let res = add3(20,30);
+console.log(res);
+------------------------------------------------
+
+
+let square = (a) => {
+  let c = a*a;
+  return c;
+}
+
+let res  = square(20);
+console.log(res);
+
+//if function has only one argument, parenthesis is not mandatory
+let square1 = a => {
+  let c = a*a;
+  return c;
+}
+let res1  = square1(30);
+console.log(res1);
+
+//if there is only one statment in function body then curly braces are not mandatory
+let square2 = a =>  a*a;
+let res2  = square2(40);
+console.log(res2);
+
+
+----------------------------------------------------------------------
+
+//default values for function arguments
+let multiply = function (a=1,b=1,c=1){
+  console.log('a=',a);
+  console.log('b=',b);
+  console.log('c=',c);
+  console.log('');
+  return a*b*c;
+}
+
+let res1 = multiply(10,20,30);
+let res2 = multiply(10,20);
+let res3 = multiply(10);
+let res4 = multiply();
+
+console.log(res1, res2, res3, res4);
+
+--OR---
+
+let multiply =  (a=1,b=1,c=1) => a*b*c;
+
+
+let res1 = multiply(10,20,30);
+let res2 = multiply(10,20);
+let res3 = multiply(10);
+let res4 = multiply();
+
+console.log(res1, res2, res3, res4);
+
+---------------------------------------------------------------------------
+
+//spread operator
+
+let person = {id:1, name:'Jack', salary:5000};
+
+let id = person.id ;
+let name = person.name;
+let salary = person.salary;
+
+console.log(id,name,salary);
+
+let person1 = {};
+for(let key in person){
+  console.log(key, person[key]);
+  person1[key] = person[key];
+}
+
+//person1.name = "sam";
+
+let person2 = {...person}; //spread operator
+
+person2.name ="sam";
+
+
+console.log('person=',person);
+console.log('person1=',person1);
+console.log('person2=',person2);
+
+-------------------------------------------------------------------------
+
+
+let person = {id:1, name:'Jack'};
+let emp = {salary:7000, age:25};
+
+let person2 = {...person, ...emp}; //spread operator
+
+function display(id,name){
+  console.log(id,name);
+}
+
+
+console.log('person=',person);
+console.log('person2=',person2);
+
+
+-------------------------------------------------
+//spread operator ... with array
+let arr = [1,2,3,4,5]
+
+//new array with all the value of arr, and append 10,30,40
+let newArr = [...arr, 10,30,40]
+console.log(newArr);
+
+-------------------------------------------------------------
+let arr = [10,20];
+
+function add(a=0,b=0,c=0,d=0){
+  return a+b+c+d;
+}
+
+let res = add(arr[0], arr[1], arr[2], arr[3]);
+console.log(res);
+
+let res1 = add(...arr);
+console.log(res1);
+
+---------------------------------------------------------
+//object destruturing
+let person = {name:"john", age:32, city:"New York"};
+
+/*
+let name =person.name;
+let age = person.age;
+let city = person.city;
+*/
+
+let {name, age, city} = person;
+
+console.log(name,age, city);
+
+//array destruturing
+let arr = ["apple", "banana", "orange"];
+/*
+let a = arr[0];
+let b = arr[1];
+let c= arr[2];
+*/
+let [a,b] = arr;
+console.log(a,b);
+
+-----------------------------------------------------------
+//splice function
+
+/*
+arr.splice{
+  startingIndex,
+  removeHowMany,
+  ...elementToadds
+};
+*/
+
+let arr =[10,20,50,3,4];
+
+let newArr = arr.splice(1,2,111,222,333);
+console.log(arr);
+console.log(newArr);
+
+------------------------------------------------------------
+let arr = [1,2,3,4,5,6,7,8];
+
+let barr = [];
+
+for(let a of arr){
+  if(a%2==0){
+    barr.push(a);
+  }
+}
+
+console.log(arr);
+console.log(barr);
+
+let carr = arr.filter(function(x){
+  return x%2==0;
+});
+
+console.log(carr);
+
+let darr = arr.filter(x => x%2==0);
+console.log(darr);

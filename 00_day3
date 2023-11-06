@@ -1,0 +1,204 @@
+
+//Javascript array
+let arr = [1,2,30,40];
+console.log(arr);
+
+//modify the element
+arr[2] = 100;
+console.log(arr);
+
+//add element
+arr.push(500);
+console.log(arr);
+
+//remove element
+let  x = arr.pop();
+console.log(arr);
+console.log('x=',x);
+
+let barr = [];
+let y =barr.pop();
+console.log('y= ', y);
+
+//indexof [ 1, 2, 100, 40 ]
+console.log(arr.indexOf(100));
+console.log(arr.indexOf(1000));
+
+console.log(typeof arr, typeof barr);
+
+/*
+[ 1, 2, 30, 40 ]
+[ 1, 2, 100, 40 ]
+[ 1, 2, 100, 40, 500 ]
+[ 1, 2, 100, 40 ]
+x= 500
+y=  undefined
+2
+-1
+object object
+*/
+
+
+//------------------------------Function---------------------------------------------------
+//syntax 1:
+  function add(a,b){
+    return a+b;
+  }
+  
+  let ans = add(10,20);
+  console.log(ans);
+
+  function foo(){
+    console.log('hello');
+  }
+
+  foo();
+
+//syntax 2:
+ let add1 = function(a,b){
+    return a+b;
+ }
+ 
+ 
+ let ans1 = add1(30,40);
+ console.log(ans1);
+
+
+ //syntax 3:
+ function hosting
+ foo(); //it will work
+ function foo(){}
+
+ foo1(); //not work
+ let foo1 = function(){}
+
+
+ 
+ Question:
+ which below are truthy:
+ 1. ""
+ 2. []
+ 3. {}
+ 4. null
+ 5. NaN
+ 6. Infinity
+ 7. 0
+
+
+//loop
+//pre testing => for, while
+let i = 0;
+while (i <= 10) {
+  console.log(i);
+  i++;
+}
+console.log("-----------------------------");
+
+for(let j=0; j<=10;j++){
+  console.log(j);
+}
+
+
+console.log("-----------------------------");
+//post testing => do while
+let k = 0;
+do{
+  console.log(k);
+  k++;
+}while(k <=  10);
+
+/******************Iterate the array********************** */
+let arr = [10,20,30,40];
+
+for(let i=0;i<arr.length;i++){
+  console.log(arr[i]);
+}
+
+console.log('--------------------');
+for(let item of arr){
+  console.log(item);
+}
+
+console.log('--------------------');
+arr.forEach(function(x){
+  console.log(x);
+});
+
+
+//switch case
+
+    //self study
+    
+
+//ternary operator
+let a = 10;
+10%2 ==0 ?console.log('even'):console.log('odd');
+
+let res = 10%2 ==0 ?'even':'odd';
+console.log(res);
+
+
+//let arr = [2,3,4,5];
+//let barr = [4,9,16,25];
+
+let arr = [2, 3, 4, 5];
+let brr = [];
+for (let a of arr) {
+  brr.push(a*a);
+}
+
+console.log(arr,brr);
+
+
+class Person{
+    constructor(name,age){
+      this.name = name;
+      this.age = age;
+    }
+  
+    function display(){
+      console.log('Name: ',this.name);
+      console.log('Age: ', this.age);
+    }
+  }
+  
+  let person1 = new Person("Jack", 23);
+  console.log(person1);
+  
+  let person2 = {name:'Sam', age:26,
+                   display: function(){
+                   console.log('Name: ',this.name);
+                   console.log('Age: ', this.age);
+                 }
+                };
+  person2.display();
+
+  /******************************************* */
+  //object oriented js
+
+class Person{
+    constructor(name,age){
+      this.name = name;
+      this.age = age;
+    }
+  
+    static compare(person1,person2){
+      return person1.name === person2.name  && person1.age === person2.age;
+    }
+  
+    display(){
+      console.log('Name: ',this.name);
+      console.log('Age: ', this.age);
+    }
+  }
+  
+  let p1 = new Person('Jack',23);
+  let p2 = new Person('Jack','23');
+  console.log(Person.compare(p1,p2));
+  
+  p1.display();
+  p2.display();
+
+
+
+

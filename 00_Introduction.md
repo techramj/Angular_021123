@@ -22,9 +22,9 @@ Vanilla JS: java script without any libraries.
     React native
     native script
 
-JS feature:
-1. Js is an interpreted language (executed without compiling)
-2. JS is dynamically and weakly typed
+# JS feature:
+    1. Js is an interpreted language (executed without compiling)
+    2. JS is dynamically and weakly typed
 
     var a = 10;  //js  
     typeof a;
@@ -39,7 +39,7 @@ JS feature:
 
     int b;
 
-    # diff between var and let.
+## diff between var and let.
        var  => function scope
        let  => block scope
 
@@ -58,14 +58,14 @@ JS feature:
 
 ## datatype
 1. Number
-        let natural = 100;
-        let decimal = 100.1;
-        let hex = 0XA;
-        let binary = 0b111;
-        let octal = 0o73;
-        let tenLakhs = 10e6;
+            let natural = 100;
+            let decimal = 100.1;
+            let hex = 0XA;
+            let binary = 0b111;
+            let octal = 0o73;
+            let tenLakhs = 10e6;
 
-        NaN & Infinity is specail type of number
+            NaN & Infinity is specail type of number
 
 
 2. String
@@ -100,10 +100,37 @@ JS feature:
     person.name
     person['name']
 
+    ## Null is an object
+        let a = null;
+        console.log(typeof a); //object
+
 
 
 6. Bigint
+        //bigint
+
+
+        let x = 12345678912345;
+        console.log(x); // 12345678912345
+
+        let y =  12345678912345678912;
+        console.log(y); //12345678912345680000
+
+        let z = 123456789123456789123456789n;
+        console.log(z); //123456789123456789123456789n
+        console.log(typeof z); //bigint
+
+        let p = 1n;
+        let q  = p + BigInt(2);
+        console.log(q, typeof q);
+
+
 7. Symbol
+    let a = Symbol(10);
+    let b = Symbol(10);
+    console.log(a, typeof a, a==b);
+
+
 8. function
 
 
